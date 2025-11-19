@@ -1880,6 +1880,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 @media screen and (max-width: 768px) {
   .project-img img {
     max-height: 350px; /* Slightly smaller max-height on mobile */
+    border-radius: 25px;
+    width: 100%;
+    height:auto;
   }
   
   .blog-banner-box img {
