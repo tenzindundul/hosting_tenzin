@@ -954,14 +954,12 @@ main {
 .project-item > a { width: 100%; }
 
 .project-img {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  border-radius: 16px;
-  overflow: hidden;
-  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px; /* Minimum height for empty space */
+  padding: 20px 0;
 }
-
 .project-img::before {
   content: "";
   position: absolute;
@@ -974,7 +972,7 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
+/* .project-item > a:hover .project-img::before { width:100%; background: hsla(0, 0%, 0%, 0.5); } */
 
 .project-item-icon-box {
   --scale: 0.8;
@@ -1001,12 +999,11 @@ main {
 .project-item-icon-box ion-icon { --ionicon-stroke-width: 50px; }
 
 .project-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--transition-1);
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  display: block;
 }
-
 .project-item > a:hover img { transform: scale(1.1); }
 
 .project-title,
@@ -1060,20 +1057,20 @@ main {
   z-index: -1;
 }
 
+
 .blog-banner-box {
-  width: 100%;
-  height: 200px;
-  border-radius: 12px;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+  padding: 15px 0;
 }
-
 .blog-banner-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--transition-1);
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  display: block;
 }
-
 .blog-post-item > a:hover .blog-banner-box img { transform: scale(1.1); }
 
 .blog-content { padding: 15px; }
@@ -1879,4 +1876,24 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+@media screen and (max-width: 768px) {
+  .project-img img {
+    max-height: 350px; /* Slightly smaller max-height on mobile */
+    border-radius: 25px;
+    width: 100%;
+    height:auto;
+  }
+  
+  .blog-banner-box img {
+    max-height: 250px;
+  }
+}
+
+/* Make specific client logos wider */
+.clients-item img[src*="mandal"],
+.clients-item img[src*="best"] {
+  width: 190px !important;
+  height: auto !important;
+  max-width: none !important;
 }
