@@ -1886,3 +1886,11 @@ textarea.form-input::-webkit-resizer { display: none; }
     max-height: 250px;
   }
 }
+
+/* Make specific client logos wider */
+.clients-item img[src*="mandal"],
+.clients-item img[src*="best"] {
+  width: 190px !important;
+  height: auto !important;
+  max-width: none !important;
+}
